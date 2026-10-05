@@ -1,0 +1,159 @@
+{
+  "BPB 指标口径": {
+    "uniform_256bytes": 8.0,
+    "peaked_90pct": 0.152003,
+    "multibyte_norm": 0.333333,
+    "tokenizer_invariance": 0.5
+  },
+  "Muon 正交化": {
+    "gram_defect_before": 81.972,
+    "gram_defect_after": 0.4343,
+    "gram_diag_min": 0.5657,
+    "gram_diag_max": 0.8118,
+    "shape_preserved": true,
+    "deterministic": true,
+    "zero_input_safe": true
+  },
+  "16MB 参数预算": [
+    {
+      "vocab": 1024,
+      "params_M": 26.48,
+      "body_dtype": "bf16",
+      "embed_dtype": "bf16",
+      "MB": 52.95,
+      "fits_16MB": false
+    },
+    {
+      "vocab": 1024,
+      "params_M": 26.48,
+      "body_dtype": "int8",
+      "embed_dtype": "int8",
+      "MB": 26.48,
+      "fits_16MB": false
+    },
+    {
+      "vocab": 1024,
+      "params_M": 26.48,
+      "body_dtype": "int6",
+      "embed_dtype": "int6",
+      "MB": 19.86,
+      "fits_16MB": false
+    },
+    {
+      "vocab": 1024,
+      "params_M": 26.48,
+      "body_dtype": "int4",
+      "embed_dtype": "int4",
+      "MB": 13.24,
+      "fits_16MB": true
+    },
+    {
+      "vocab": 1024,
+      "params_M": 26.48,
+      "body_dtype": "bf16",
+      "embed_dtype": "int6",
+      "MB": 52.3,
+      "fits_16MB": false
+    },
+    {
+      "vocab": 4096,
+      "params_M": 28.05,
+      "body_dtype": "bf16",
+      "embed_dtype": "bf16",
+      "MB": 56.1,
+      "fits_16MB": false
+    },
+    {
+      "vocab": 4096,
+      "params_M": 28.05,
+      "body_dtype": "int8",
+      "embed_dtype": "int8",
+      "MB": 28.05,
+      "fits_16MB": false
+    },
+    {
+      "vocab": 4096,
+      "params_M": 28.05,
+      "body_dtype": "int6",
+      "embed_dtype": "int6",
+      "MB": 21.04,
+      "fits_16MB": false
+    },
+    {
+      "vocab": 4096,
+      "params_M": 28.05,
+      "body_dtype": "int4",
+      "embed_dtype": "int4",
+      "MB": 14.02,
+      "fits_16MB": true
+    },
+    {
+      "vocab": 4096,
+      "params_M": 28.05,
+      "body_dtype": "bf16",
+      "embed_dtype": "int6",
+      "MB": 53.48,
+      "fits_16MB": false
+    },
+    {
+      "vocab": 8192,
+      "params_M": 30.15,
+      "body_dtype": "bf16",
+      "embed_dtype": "bf16",
+      "MB": 60.29,
+      "fits_16MB": false
+    },
+    {
+      "vocab": 8192,
+      "params_M": 30.15,
+      "body_dtype": "int8",
+      "embed_dtype": "int8",
+      "MB": 30.15,
+      "fits_16MB": false
+    },
+    {
+      "vocab": 8192,
+      "params_M": 30.15,
+      "body_dtype": "int6",
+      "embed_dtype": "int6",
+      "MB": 22.61,
+      "fits_16MB": false
+    },
+    {
+      "vocab": 8192,
+      "params_M": 30.15,
+      "body_dtype": "int4",
+      "embed_dtype": "int4",
+      "MB": 15.07,
+      "fits_16MB": true
+    },
+    {
+      "vocab": 8192,
+      "params_M": 30.15,
+      "body_dtype": "bf16",
+      "embed_dtype": "int6",
+      "MB": 55.05,
+      "fits_16MB": false
+    }
+  ],
+  "A/B 机制 smoke": {
+    "adamw": {
+      "optimizer": "adamw",
+      "steps": 120,
+      "loss_first": 2.78537,
+      "loss_last": 0.041297,
+      "loss_min": 0.028868,
+      "wallclock_s": 0.124,
+      "reduced_by_pct": 98.52
+    },
+    "muon": {
+      "optimizer": "muon",
+      "steps": 120,
+      "loss_first": 2.78537,
+      "loss_last": 0.035979,
+      "loss_min": 0.032324,
+      "wallclock_s": 0.238,
+      "reduced_by_pct": 98.71
+    }
+  }
+}
