@@ -42,12 +42,20 @@ def main():
         import muon
         import budget
         import smoke_ab
+        import seeds
+        import significance
+        import package
+        import entry
 
         cases = [
             ("BPB 指标口径", bpb.self_test),
             ("Muon 正交化", muon.self_test),
             ("16MB 参数预算", budget.self_test),
             ("A/B 机制 smoke", smoke_ab.self_test),
+            ("3-seed 可复现 + 对照统计", seeds.self_test),
+            ("L3 显著性门禁", significance.self_test),
+            ("提交件打包门禁（含超限拦截）", package.self_test),
+            ("训练入口三向门禁", entry.self_test),
         ]
     except Exception as e:  # noqa: BLE001
         failed += 1
@@ -76,7 +84,9 @@ def main():
 
     log("=" * 68)
     if failed == 0:
-        log("结论：评测口径 / 正交化实现 / 尺寸预算 / A-B 管线，四项在本机可复现。")
+        log("结论：评测口径 / 正交化实现 / 尺寸预算 / A-B 管线 / 3-seed 复跑 /")
+        log("      显著性门禁 / 打包门禁 / 训练入口三向门禁，八项在本机可复现")
+        log("      （含三条会真拦人的负向用例：超限载荷 17.0MB / 欠功效显著性 / 无卡训练 rc=3）。")
         log("待机器到位后，同一入口即可替换为真实 8xH100 训练。")
     else:
         log(f"结论：有 {failed} 项未通过，本机校验未达成可复现（详见上方 FAIL）。")

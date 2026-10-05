@@ -1,0 +1,48 @@
+{
+  "kind": "local-scaled-3seed",
+  "is_evidence_for_L2_L3": false,
+  "why_not": "合成数据 + MSE 缩比，不是 FineWeb/BPB；仅证明管线可跑且可复现",
+  "seeds": [
+    20261005,
+    20261006,
+    20261007
+  ],
+  "per_seed": [
+    {
+      "seed": 20261005,
+      "delta_reduced_pct": 0.19,
+      "delta_loss_last": -0.005318
+    },
+    {
+      "seed": 20261006,
+      "delta_reduced_pct": -0.33,
+      "delta_loss_last": 0.006247
+    },
+    {
+      "seed": 20261007,
+      "delta_reduced_pct": 0.09,
+      "delta_loss_last": -0.001027
+    }
+  ],
+  "adamw_reduced_pct": {
+    "mean": 98.1933,
+    "stderr": 0.4146
+  },
+  "muon_reduced_pct": {
+    "mean": 98.1767,
+    "stderr": 0.3723
+  },
+  "delta_reduced_pct": {
+    "mean": -0.0167,
+    "stderr": 0.1593
+  },
+  "repeatability_same_seed": {
+    "seed": 20261005,
+    "adamw_loss_last_equal": true,
+    "muon_loss_last_equal": true,
+    "adamw_loss_last": 0.041297,
+    "muon_loss_last": 0.035979
+  },
+  "outdir": "/Users/xiaowo/.cogseed-dev/userWorkSpace/检查挑战清单完成情况/C2G/Zhouruoying_C2G_logs",
+  "verdict": "PASS"
+}
