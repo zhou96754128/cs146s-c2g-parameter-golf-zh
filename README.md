@@ -33,14 +33,20 @@ python3 run_all.py
 
 约定：`run_all.py` 返回 `0` 表示全部 PASS，返回 `1` 表示存在失败项。
 
-最近一次运行结果：**4/4 PASS，退出码 0**（日志见 `logs/run_all.log`，结构化结果见 `logs/summary.json`）。
+最近一次运行结果：**8/8 PASS，退出码 0**（日志见 `logs/run_all.log`，结构化结果见 `logs/summary.json`）。
 
-覆盖范围：
+覆盖范围（8 项）：
 
 - `bpb.py` —— BPB 计算口径自检（均匀分布、单峰分布、多字节归一、分词器不变性）
-- `muon.py` —— Muon 正交化步骤自检（Gram 缺陷收敛、对角元范围、形状保持、确定性、零输入安全）
+- `muon.py` —— Muon 正交化步骤自检（Gram 缺陷 81.972 → 0.4343、对角元范围、形状保持、确定性、零输入安全）
 - `budget.py` —— 16 MB 模型预算与 10 分钟训练预算核算
 - `smoke_ab.py` —— AdamW / Muon 小规模 A/B 冒烟对照
+- `seeds.py` —— 3 seed（20261005 / 20261006 / 20261007）复跑一致性 + 对照统计，落盘 `../Zhouruoying_C2G_logs/`
+- `significance.py` —— L3 显著性门禁（精确双侧符号翻转检验、t 临界值手算校验、最小可判 seed 数）
+- `package.py` —— 提交件打包门禁（打包件字节数 ≤16,000,000 硬拦截 + 超限负向用例）
+- `entry.py` / `Zhouruoying_C2G_train_gpt.py` —— 训练入口自检（`--check` 退出码 0；`--train` 无 torch 时以退出码 3 明确阻塞，不静默失败）
+
+> 诚实边界：本机无 8×H100，以上全部为**机制与工程可复现性**证据，**不含任何真实 BPB 成绩**；BPB 数值一律标注为「预期值」。
 
 ## 三、技术路线一句话
 
