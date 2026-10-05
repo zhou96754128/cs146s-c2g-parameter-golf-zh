@@ -1,0 +1,95 @@
+{
+  "challenge": "C2G",
+  "challengeId": "ch-20260717031359-b8wyg0",
+  "author": "Zhouruoying",
+  "date": "2026-10-05",
+  "record_type": "缩小规模真实受控训练对照（非 FineWeb 口径、非榜单成绩）",
+  "environment": {
+    "device": "cpu",
+    "machine": "macOS-26.5-arm64",
+    "torch": "2.14.1",
+    "python": "3.12.13",
+    "gpus": 0,
+    "note": "本机无 8×H100，故为 CPU 缩小规模真实训练；不是 FineWeb 榜单口径。"
+  },
+  "corpus": {
+    "name": "wikitext-2-raw-v1 (Salesforce/wikitext, Apache-2.0)",
+    "train_bytes": 10951562,
+    "valid_bytes": 1148007,
+    "note": "替换官方 FineWeb 语料的知性降级；BPB 绝对值不可比。"
+  },
+  "config": {
+    "steps": 600,
+    "batch": 16,
+    "block": 256,
+    "seeds": [
+      20261005,
+      20261006,
+      20261007
+    ],
+    "params": 3346944,
+    "fp32_weight_bytes": 13387776,
+    "within_16mb_fp32": true
+  },
+  "main_comparison": {
+    "adamw@1e-3": {
+      "n": 3,
+      "mean_bpb": 3.206131,
+      "stdev": 0.022501,
+      "min_bpb": 3.18798,
+      "max_bpb": 3.231307,
+      "per_seed": {
+        "20261005": 3.231307,
+        "20261006": 3.18798,
+        "20261007": 3.199107
+      }
+    },
+    "muon@1e-3": {
+      "n": 3,
+      "mean_bpb": 2.223588,
+      "stdev": 0.018996,
+      "min_bpb": 2.206367,
+      "max_bpb": 2.243964,
+      "per_seed": {
+        "20261005": 2.220433,
+        "20261006": 2.243964,
+        "20261007": 2.206367
+      }
+    },
+    "delta_bpb": 0.982543,
+    "sign_consistency": "3/3 seed 同号",
+    "welch_t": 57.79,
+    "paired_t": 49.22,
+    "power_caveat": "n=3 只能说明方向一致；p<0.01 的符号翻转检验需 ≥7–8 seed，尚未跑。"
+  },
+  "lr_probes": {
+    "adamw@3e-4_seed20261005": 3.413201,
+    "adamw@3e-3_seed20261005": 3.440503
+  },
+  "exit_codes": {
+    "adamw_seed20261005": 0,
+    "muon_seed20261005": 0,
+    "adamw_seed20261006": 0,
+    "muon_seed20261006": 0,
+    "adamw_seed20261007": 0,
+    "muon_seed20261007": 0,
+    "adamw_lr3e-4_seed20261005": 0,
+    "adamw_lr3e-3_seed20261005": 0
+  },
+  "artifact": {
+    "name": "Zhouruoying_C2G_submission.tar.gz",
+    "bytes": 12427464,
+    "limit": 16000000,
+    "fits_limit": true,
+    "reload_ok": true,
+    "model_bytes": 13398900,
+    "members": [
+      "README.md",
+      "model.pt",
+      "submission.json"
+    ]
+  },
+  "verdict": "Muon 更低",
+  "reproduce": "python3 run_sweep.py（_c2g_realrun/）；校验：python3 Zhouruoying_C2G_本地校验/run_all.py",
+  "scale_caveat": "本机 CPU 缩小规模真实训练。BPB 绝对值不可与榜单 1.0810 / baseline 1.2244 直接比较；用途是为「Muon 单点改进」提供真实、可复现的实验记录与真实权重产物，而非宣称榜单成绩。Level 2/3 达标须在 8×H100 + FineWeb 口径下实测。"
+}

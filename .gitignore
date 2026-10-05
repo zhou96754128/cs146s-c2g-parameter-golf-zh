@@ -10,3 +10,6 @@ venv/
 *.pt
 *.ckpt
 *.safetensors
+
+# 打包暂存目录（scratch）
+_submission_members/

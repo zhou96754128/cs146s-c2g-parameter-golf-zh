@@ -69,7 +69,7 @@ def check():
         "budget_rows": rows,
         "wallclock_headroom_s": WALLCLOCK_LIMIT_S - TRAIN_TARGET_S,
         "verdict": "PASS" if not bad else "FAIL",
-        "honesty": "本机无 8×H100，此处不含任何真实 BPB 成绩",
+        "honesty": "本机无 8×H100；check 模式只核算配置与预算，本身不含 BPB；本机缩比真实 BPB 见 Zhouruoying_C2G_实测记录.md（不可与榜单 1.0810 比较）",
     }
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0 if not bad else 1
