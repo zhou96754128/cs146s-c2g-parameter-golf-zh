@@ -143,7 +143,7 @@
       "loss_first": 2.78537,
       "loss_last": 0.041297,
       "loss_min": 0.028868,
-      "wallclock_s": 0.117,
+      "wallclock_s": 0.12,
       "reduced_by_pct": 98.52
     },
     "muon": {
@@ -152,7 +152,7 @@
       "loss_first": 2.78537,
       "loss_last": 0.035979,
       "loss_min": 0.032324,
-      "wallclock_s": 0.223,
+      "wallclock_s": 0.224,
       "reduced_by_pct": 98.71
     }
   },
@@ -230,13 +230,13 @@
   },
   "提交件打包门禁（含超限拦截）": {
     "compliant_payload": {
-      "bytes": 196,
+      "bytes": 195,
       "fits": true,
       "rc": 0,
       "measured": false
     },
     "oversize_payload": {
-      "bytes": 17005509,
+      "bytes": 17005512,
       "fits": false,
       "rc": 1
     },
