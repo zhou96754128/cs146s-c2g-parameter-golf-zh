@@ -6,7 +6,7 @@
     "loss_first": 1.124262,
     "loss_last": 0.029624,
     "loss_min": 0.017696,
-    "wallclock_s": 0.117,
+    "wallclock_s": 0.118,
     "reduced_by_pct": 97.37
   },
   "muon": {
@@ -15,7 +15,7 @@
     "loss_first": 1.124262,
     "loss_last": 0.028597,
     "loss_min": 0.021516,
-    "wallclock_s": 0.224,
+    "wallclock_s": 0.226,
     "reduced_by_pct": 97.46
   },
   "delta_reduced_pct": 0.09,
