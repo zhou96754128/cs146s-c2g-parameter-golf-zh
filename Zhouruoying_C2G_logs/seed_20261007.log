@@ -1,4 +1,4 @@
 [seed 20261007] 缩比 A/B（合成数据/MSE，非 BPB）
   adamw  loss_first=1.124262 loss_last=0.029624 reduced=97.37% wallclock=0.117s
-  muon   loss_first=1.124262 loss_last=0.028597 reduced=97.46% wallclock=0.224s
+  muon   loss_first=1.124262 loss_last=0.028597 reduced=97.46% wallclock=0.223s
   delta_reduced_pct=+0.0900
