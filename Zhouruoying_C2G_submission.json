@@ -1,0 +1,17 @@
+{
+  "challenge": "C2G",
+  "challengeId": "ch-20260717031359-b8wyg0",
+  "author": "Zhouruoying",
+  "artifact": "Zhouruoying_C2G_submission.tar.gz",
+  "artifact_bytes": 378,
+  "artifact_limit": 16000000,
+  "fits_limit": true,
+  "file_count": 1,
+  "placeholder": true,
+  "measured": false,
+  "bpb": null,
+  "baseline_bpb": 1.2244,
+  "reason": "本机无 8×H100，未产出真实权重与真实 BPB；占位打包用于证明门禁链路可跑。",
+  "sha256": "e4aba386239a1e08625a1d6e2c131cc9cd886d1db48191a6d27cc2260645a4c2",
+  "packed_at": "2026-10-05T17:19:59+0800"
+}

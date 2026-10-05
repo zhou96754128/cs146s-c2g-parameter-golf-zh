@@ -152,7 +152,7 @@
       "loss_first": 2.78537,
       "loss_last": 0.035979,
       "loss_min": 0.032324,
-      "wallclock_s": 0.225,
+      "wallclock_s": 0.226,
       "reduced_by_pct": 98.71
     }
   },
@@ -230,13 +230,13 @@
   },
   "提交件打包门禁（含超限拦截）": {
     "compliant_payload": {
-      "bytes": 196,
+      "bytes": 197,
       "fits": true,
       "rc": 0,
       "measured": false
     },
     "oversize_payload": {
-      "bytes": 17005513,
+      "bytes": 17005519,
       "fits": false,
       "rc": 1
     },

@@ -9,16 +9,16 @@ C2G 本地可复现校验（CPU / 纯标准库 / 无外网）
 [PASS] 3-seed 可复现 + 对照统计  (1.74s)
 [PASS] L3 显著性门禁  (0.00s)
 [PASS] 提交件打包门禁（含超限拦截）  (0.30s)
-[PASS] 训练入口三向门禁  (0.40s)
+[PASS] 训练入口三向门禁  (0.41s)
 --------------------------------------------------------------------
 汇总：8/8 PASS
   * BPB 指标口径: {"uniform_256bytes": 8.0, "peaked_90pct": 0.152003, "multibyte_norm": 0.333333, "tokenizer_invariance": 0.5}
   * Muon 正交化: {"gram_defect_before": 81.972, "gram_defect_after": 0.4343, "gram_diag_min": 0.5657, "gram_diag_max": 0.8118, "shape_preserved": true, "deterministic": true, "zero_input_safe": true}
   * 16MB 参数预算: [{"vocab": 1024, "params_M": 26.48, "body_dtype": "bf16", "embed_dtype": "bf16", "MB": 52.95, "fits_16MB": false}, {"vocab": 1024, "params_M": 26.48, "body_dtype": "int8", "embed_dtype": "int8", "MB": 26.48, "fits_16MB": false}, {"vocab": 1024, "params_M": 26.48, "body_dtype": "int6", "embed_dtype": "int6", "MB": 19.86, "fits_16MB": false}, {"vocab": 1024, "params_M": 26.48, "body_dtype": "int4", 
-  * A/B 机制 smoke: {"adamw": {"optimizer": "adamw", "steps": 120, "loss_first": 2.78537, "loss_last": 0.041297, "loss_min": 0.028868, "wallclock_s": 0.118, "reduced_by_pct": 98.52}, "muon": {"optimizer": "muon", "steps": 120, "loss_first": 2.78537, "loss_last": 0.035979, "loss_min": 0.032324, "wallclock_s": 0.225, "reduced_by_pct": 98.71}}
+  * A/B 机制 smoke: {"adamw": {"optimizer": "adamw", "steps": 120, "loss_first": 2.78537, "loss_last": 0.041297, "loss_min": 0.028868, "wallclock_s": 0.118, "reduced_by_pct": 98.52}, "muon": {"optimizer": "muon", "steps": 120, "loss_first": 2.78537, "loss_last": 0.035979, "loss_min": 0.032324, "wallclock_s": 0.226, "reduced_by_pct": 98.71}}
   * 3-seed 可复现 + 对照统计: {"kind": "local-scaled-3seed", "is_evidence_for_L2_L3": false, "why_not": "合成数据 + MSE 缩比，不是 FineWeb/BPB；仅证明管线可跑且可复现", "seeds": [20261005, 20261006, 20261007], "per_seed": [{"seed": 20261005, "delta_reduced_pct": 0.19, "delta_loss_last": -0.005318}, {"seed": 20261006, "delta_reduced_pct": -0.33, "delta_loss_last": 0.006247}, {"seed": 20261007, "delta_reduced_pct": 0.09, "delta_loss_last": -0.001027
   * L3 显著性门禁: {"sign_flip_n3_min": {"p": 0.25, "total": 8}, "sign_flip_n8_7pos1neg": {"p": 0.070312, "total": 256}, "handcheck_pass_case": {"t": 10.3923, "verdict": "PASS"}, "noisy_case": {"mean": 0.008667, "t": 2.4568, "verdict": "FAIL"}, "SELF_TEST_FINDINGS": {"exact_permutation_min_p_at_n3": 0.25, "min_seeds_for_exact_p_lt_0.01": 8, "implication": "「≥3 seed」不足以支撑 L3 的 p<0.01 声明；精确检验需 ≥8 seed，或改用参数检验并承认欠功效。"}
-  * 提交件打包门禁（含超限拦截）: {"compliant_payload": {"bytes": 196, "fits": true, "rc": 0, "measured": false}, "oversize_payload": {"bytes": 17005513, "fits": false, "rc": 1}, "verify_consistent": true, "note": "两个方向都被验证：合规放行、超限拦截。门禁不是摆设。"}
+  * 提交件打包门禁（含超限拦截）: {"compliant_payload": {"bytes": 197, "fits": true, "rc": 0, "measured": false}, "oversize_payload": {"bytes": 17005519, "fits": false, "rc": 1}, "verify_consistent": true, "note": "两个方向都被验证：合规放行、超限拦截。门禁不是摆设。"}
   * 训练入口三向门禁: {"check": {"rc": 0, "verdict": "PASS"}, "local_smoke": {"rc": 0, "has_result": true}, "train_no_gpu": {"rc": 3, "blocked_printed": true}, "note": "入口三向：可跑 2 条 + 明确失败 1 条（失败路径不静默）"}
 ====================================================================
 结论：评测口径 / 正交化实现 / 尺寸预算 / A-B 管线 / 3-seed 复跑 /
